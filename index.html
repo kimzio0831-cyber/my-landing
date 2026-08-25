@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="ko">
 <head>
 <meta charset="UTF-8" />
@@ -78,6 +78,24 @@
   .ph.lg{ min-height:300px; font-size:14.5px; }
   .ph-row{ display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:14px; }
   .ph-row .ph{ min-height:130px; }
+
+  /* ---------- 실제 사진 ---------- */
+  .hotel-img{
+    width:100%; display:block; border-radius:14px;
+    object-fit:cover;
+    filter:brightness(1.06) contrast(0.91) saturate(1.13) sepia(0.13) hue-rotate(-6deg);
+  }
+  .hotel-img.hero-img{ border-radius:0; height:340px; object-position:center; }
+  .ph-row .hotel-img{ height:180px; }
+  .hotel-img.full{ height:220px; }
+
+  /* ---------- 후기 캡처(실제 화면이라 보정 없음) ---------- */
+  .review-shots{ display:flex; flex-direction:column; gap:12px; margin-top:16px; }
+  .review-img{
+    width:100%; display:block; border-radius:12px;
+    border:1px solid var(--line);
+    background:#fff;
+  }
 
   /* ---------- CTA 버튼 ---------- */
   .btn-cta{
@@ -244,7 +262,7 @@
 
 <!-- ===================== 섹션 1 : 히어로 ===================== -->
 <header class="hero">
-  <div class="ph">가장 깨끗하게 정돈된 대표 객실 사진<br>(첫 화면 메인 이미지)</div>
+  <img class="hotel-img hero-img" src="img/hero.jpg" alt="바이브 호텔 대표 객실" />
   <div class="hero-text">
     <h1>일과 여행 사이,<br><span class="hl">일상의 쉼표를 그리는 곳</span></h1>
     <p class="sub">출장의 하루 끝에도, 함께 떠난 여행의 밤에도<br>바이브 호텔 김해장유점에서 따뜻한 여유를 만나보세요.</p>
@@ -258,10 +276,10 @@
   <h2>깨끗함 위에 여유를 더한 공간</h2>
   <p class="body">막 정돈을 마친 듯한 객실, 전 객실 욕조, 2명부터 5명까지 머물 수 있는 타입별 객실을 준비했어요.</p>
   <div class="ph-row" style="margin-top:18px;">
-    <div class="ph">객실 내부 사진 ①<br>(침구·전체 전경)</div>
-    <div class="ph">객실 내부 사진 ②<br>(욕조·욕실)</div>
+    <img class="hotel-img" src="img/room1.jpg" alt="객실 내부" />
+    <img class="hotel-img" src="img/hero.jpg" alt="객실 욕조" />
   </div>
-  <div class="ph" style="margin-top:10px;">객실 내부 사진 ③ (어메니티·디테일)</div>
+  <img class="hotel-img full" src="img/room3.jpg" alt="트윈 객실" style="margin-top:10px;" />
 </section>
 
 <!-- ===================== 섹션 4 : 후기와 신뢰 ===================== -->
@@ -282,9 +300,10 @@
     <span class="tag">#친절한응대</span>
     <span class="tag">#편안한숙박</span>
   </div>
-  <div class="ph-row">
-    <div class="ph">실제 후기 캡처 ①</div>
-    <div class="ph">실제 후기 캡처 ②</div>
+  <div class="review-shots">
+    <img class="review-img" src="img/review1.png" alt="실제 이용 후기 - 스위트 스파 A" loading="lazy" />
+    <img class="review-img" src="img/review2.png" alt="실제 이용 후기 - 스탠다드 A" loading="lazy" />
+    <img class="review-img" src="img/review3.png" alt="실제 이용 후기 - 스위트 스파 C" loading="lazy" />
   </div>
 </section>
 
@@ -294,10 +313,10 @@
   <h2>숙박 이상의 작은 편리함</h2>
   <p class="body">조식센터에서 간단한 조식을 무료로 제공하고, 공용 세탁·건조, 프린트, 전자렌지와 인덕션도 이용할 수 있어요. 출장의 하루에도, 가족 여행에도 작은 불편을 줄여드립니다.</p>
   <div class="ph-row" style="margin-top:18px;">
-    <div class="ph">조식센터 / 무료 조식 공간 사진</div>
-    <div class="ph">공용 세탁·건조 시설 사진</div>
+    <img class="hotel-img" src="img/breakfast1.jpg" alt="조식센터" />
+    <img class="hotel-img" src="img/utility.jpg" alt="공용 세탁 건조 시설" />
   </div>
-  <div class="ph" style="margin-top:10px;">프린트·전자렌지·인덕션 공용 편의공간 사진</div>
+  <img class="hotel-img full" src="img/breakfast2.jpg" alt="공용 편의공간" style="margin-top:10px;" />
 </section>
 
 <!-- ===================== 섹션 6 : 위치와 주변 ===================== -->
@@ -306,10 +325,10 @@
   <h2>출장도 여행도<br>움직이기 좋은 장유</h2>
   <p class="body">김해국제공항과 주요 산업단지로 이동하기 편하고, 김해롯데워터파크와 롯데프리미엄아울렛 김해점도 가까워요. 여유 있는 날엔 장유대청계곡까지 둘러보기 좋습니다.</p>
   <div class="ph-row" style="margin-top:18px;">
-    <div class="ph">바이브 호텔 김해장유점 외관 사진</div>
-    <div class="ph">김해롯데워터파크 사진</div>
+    <img class="hotel-img" src="img/exterior.jpg" alt="바이브 호텔 외관" />
+    <img class="hotel-img" src="img/waterpark.png" alt="김해 롯데워터파크" />
   </div>
-  <div class="ph" style="margin-top:10px;">롯데프리미엄아울렛 김해점 사진</div>
+  <img class="hotel-img full" src="img/outlet.png" alt="롯데프리미엄아울렛 김해점" style="margin-top:10px;" />
 </section>
 
 <!-- ===================== 섹션 6 : 이벤트 (룰렛 + 카운트다운) ===================== -->
@@ -1023,3 +1042,4 @@ document.getElementById("apply-form").addEventListener("submit", e => {
 </script>
 </body>
 </html>
+
