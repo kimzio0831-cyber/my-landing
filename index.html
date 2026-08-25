@@ -257,6 +257,25 @@
   .modal .btn-cta{ background:var(--accent); box-shadow:0 6px 16px rgba(63,94,84,.35); }
   .modal .btn-cta:active{ background:#33493f; }
 </style>
+
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1775346527130914');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1775346527130914&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
+
 </head>
 <body>
 
@@ -399,7 +418,8 @@
 
 <footer>
   바이브 호텔 김해장유점 · 경상남도 김해시 번화1로56번길 25 · 055-724-2533<br>
-  네이버 예약 페이지에서 원하는 객실을 선택해 주세요
+  네이버 예약 페이지에서 원하는 객실을 선택해 주세요<br><br>
+  <a href="#admin" style="font-size:11px; color:#B9B0A2; text-decoration:none;">⚙️ 관리자</a>
 </footer>
 
 <!-- ===================== 플로팅 신청 버튼 ===================== -->
@@ -822,15 +842,23 @@ document.getElementById("apply-form").addEventListener("submit", e => {
     font-family:"Pretendard","Apple SD Gothic Neo","Malgun Gothic",system-ui,sans-serif; }
   #admin-screen.show{ display:block; }
   .adm-wrap{ max-width:760px; margin:0 auto; padding:20px 16px 60px; }
-  .adm-top{ display:flex; align-items:center; justify-content:space-between; margin-bottom:6px; }
+  .adm-top{ display:flex; align-items:center; justify-content:space-between; margin-bottom:16px; }
   .adm-top h1{ font-size:20px; font-weight:900; }
   .adm-x{ background:#2E2A26; color:#fff; border:none; border-radius:8px; padding:8px 12px; font-weight:800; cursor:pointer; }
-  .adm-note{ font-size:12px; color:#8A8378; background:#fff; border:1px solid #E7DFD3; border-radius:10px; padding:10px 12px; margin:10px 0 16px; line-height:1.5; }
+  .adm-note{ font-size:12px; color:#8A8378; background:#fff; border:1px solid #E7DFD3; border-radius:10px; padding:10px 12px; margin:0 0 16px; line-height:1.5; }
   .adm-gate{ max-width:300px; margin:80px auto; text-align:center; }
   .adm-gate h2{ font-size:18px; margin-bottom:14px; }
   .adm-gate input{ width:100%; padding:13px; font-size:16px; border:1.5px solid #E7DFD3; border-radius:10px; margin-bottom:10px; text-align:center; }
   .adm-gate button{ width:100%; padding:13px; font-size:16px; font-weight:800; border:none; border-radius:10px; background:#3F5E54; color:#fff; cursor:pointer; }
   .adm-err{ color:#C0392B; font-size:13px; margin-top:8px; min-height:18px; }
+
+  /* 탭 */
+  .adm-tabs{ display:flex; border-bottom:2px solid #E7DFD3; margin-bottom:20px; }
+  .adm-tab{ padding:10px 18px; font-size:14px; font-weight:700; color:#8A8378; cursor:pointer; border-bottom:3px solid transparent; margin-bottom:-2px; background:none; border-top:none; border-left:none; border-right:none; }
+  .adm-tab.active{ color:#2E2A26; border-bottom-color:#2E2A26; }
+  .adm-pane{ display:none; }
+  .adm-pane.active{ display:block; }
+
   .adm-filter{ display:flex; flex-wrap:wrap; gap:8px; align-items:center; background:#fff; border:1px solid #E7DFD3; border-radius:10px; padding:10px 12px; margin-bottom:14px; font-size:13px; }
   .adm-filter input{ padding:8px; border:1px solid #E7DFD3; border-radius:8px; font-size:13px; }
   .adm-filter button{ padding:8px 12px; border:none; border-radius:8px; background:#3F5E54; color:#fff; font-weight:700; cursor:pointer; }
@@ -849,6 +877,29 @@ document.getElementById("apply-form").addEventListener("submit", e => {
   .b-refresh{ background:#C8784E; color:#fff; }
   .b-clear{ background:#fff; color:#C0392B; border:1px solid #C0392B !important; }
   .adm-empty{ color:#8A8378; font-size:13px; padding:14px; text-align:center; }
+
+  /* 설정 탭 */
+  .set-block{ background:#fff; border:1px solid #E7DFD3; border-radius:14px; padding:20px; margin-bottom:20px; }
+  .set-block h3{ font-size:16px; font-weight:900; margin-bottom:6px; }
+  .set-block .set-desc{ font-size:13px; color:#8A8378; margin-bottom:16px; line-height:1.5; }
+  .set-input-row{ display:flex; gap:8px; align-items:center; margin-bottom:10px; }
+  .set-input-row input{ flex:1; padding:12px 14px; border:1.5px solid #E7DFD3; border-radius:10px; font-size:15px; background:#FBF9F5; }
+  .set-input-row input:focus{ outline:none; border-color:#3F5E54; }
+  .btn-set-save{ padding:11px 18px; background:#3F5E54; color:#fff; border:none; border-radius:10px; font-weight:800; font-size:14px; cursor:pointer; white-space:nowrap; }
+  .btn-set-del{ padding:11px 16px; background:#fff; color:#C0392B; border:1.5px solid #C0392B; border-radius:10px; font-weight:800; font-size:14px; cursor:pointer; white-space:nowrap; }
+  .set-status{ font-size:13px; font-weight:700; margin-top:6px; }
+  .set-status.on{ color:#27AE60; }
+  .set-status.off{ color:#8A8378; }
+  .set-howto{ background:#F4F1EB; border-radius:10px; padding:12px 14px; font-size:12.5px; color:#6F6A63; line-height:1.7; margin-top:12px; }
+  .set-howto b{ font-weight:800; color:#2E2A26; }
+  .notif-row{ display:flex; align-items:center; justify-content:space-between; }
+  .notif-status{ font-size:14px; font-weight:700; }
+  .notif-status.on{ color:#27AE60; }
+  .notif-status.off{ color:#8A8378; }
+  .btn-notif{ padding:10px 18px; border:none; border-radius:10px; font-weight:800; font-size:14px; cursor:pointer; }
+  .btn-notif.enable{ background:#3F5E54; color:#fff; }
+  .btn-notif.disable{ background:#fff; color:#8A8378; border:1.5px solid #E7DFD3; }
+  .notif-desc{ font-size:13px; color:#8A8378; margin-top:8px; line-height:1.5; }
 </style>
 
 <div id="admin-screen">
@@ -865,41 +916,86 @@ document.getElementById("apply-form").addEventListener("submit", e => {
     <div id="adm-dash" style="display:none;">
       <div class="adm-top">
         <h1>📊 바이브 호텔 관리자</h1>
-        <button class="adm-x" id="adm-close">닫기 ✕</button>
+        <button class="adm-x" id="adm-close">로그아웃</button>
       </div>
       <div class="adm-note" id="adm-source-note"></div>
 
-      <div class="adm-filter">
-        <span>기간</span>
-        <input type="date" id="adm-from" />
-        <span>~</span>
-        <input type="date" id="adm-to" />
-        <button id="adm-apply">적용</button>
-        <button id="adm-all" style="background:#8A8378;">전체</button>
+      <!-- 탭 네비게이션 -->
+      <div class="adm-tabs">
+        <button class="adm-tab active" data-tab="tab-stats">통계</button>
+        <button class="adm-tab" data-tab="tab-db">CONSULTATIONS DB</button>
+        <button class="adm-tab" data-tab="tab-settings">설정</button>
       </div>
 
-      <div class="adm-cards">
-        <div class="adm-card"><div class="v" id="st-visits">0</div><div class="l">유입 수</div></div>
-        <div class="adm-card"><div class="v" id="st-cta">0</div><div class="l">CTA 클릭</div></div>
-        <div class="adm-card"><div class="v" id="st-leads">0</div><div class="l">신청 수</div></div>
-        <div class="adm-card"><div class="v" id="st-conv">–</div><div class="l">전환율(신청/유입)</div></div>
-        <div class="adm-card"><div class="v" id="st-consent">0</div><div class="l">마케팅 동의</div></div>
-        <div class="adm-card"><div class="v" id="st-channel">0</div><div class="l">채널 링크 보유</div></div>
+      <!-- 통계 탭 -->
+      <div class="adm-pane active" id="tab-stats">
+        <div class="adm-filter">
+          <span>기간</span>
+          <input type="date" id="adm-from" />
+          <span>~</span>
+          <input type="date" id="adm-to" />
+          <button id="adm-apply">적용</button>
+          <button id="adm-all" style="background:#8A8378;">전체</button>
+        </div>
+        <div class="adm-cards">
+          <div class="adm-card"><div class="v" id="st-visits">0</div><div class="l">유입 수</div></div>
+          <div class="adm-card"><div class="v" id="st-cta">0</div><div class="l">CTA 클릭</div></div>
+          <div class="adm-card"><div class="v" id="st-leads">0</div><div class="l">신청 수</div></div>
+          <div class="adm-card"><div class="v" id="st-conv">–</div><div class="l">전환율(신청/유입)</div></div>
+          <div class="adm-card"><div class="v" id="st-consent">0</div><div class="l">마케팅 동의</div></div>
+          <div class="adm-card"><div class="v" id="st-channel">0</div><div class="l">채널 링크 보유</div></div>
+        </div>
+        <div class="adm-sec">유입 경로</div>
+        <div class="adm-scroll"><table class="adm-table" id="tbl-source"></table></div>
+        <div class="adm-sec">룰렛 결과 분포</div>
+        <div class="adm-scroll"><table class="adm-table" id="tbl-roulette"></table></div>
       </div>
 
-      <div class="adm-sec">유입 경로</div>
-      <div class="adm-scroll"><table class="adm-table" id="tbl-source"></table></div>
-
-      <div class="adm-sec">룰렛 결과 분포</div>
-      <div class="adm-scroll"><table class="adm-table" id="tbl-roulette"></table></div>
-
-      <div class="adm-sec">고객 DB (신청 목록)</div>
-      <div class="adm-btns">
-        <button class="b-csv" id="adm-csv">CSV 내보내기</button>
-        <button class="b-refresh" id="adm-refresh">새로고침</button>
-        <button class="b-clear" id="adm-clear">데이터 비우기</button>
+      <!-- CONSULTATIONS DB 탭 -->
+      <div class="adm-pane" id="tab-db">
+        <div class="adm-btns">
+          <button class="b-csv" id="adm-csv">CSV 내보내기</button>
+          <button class="b-refresh" id="adm-refresh">새로고침</button>
+          <button class="b-clear" id="adm-clear">데이터 비우기</button>
+        </div>
+        <div class="adm-scroll"><table class="adm-table" id="tbl-db"></table></div>
       </div>
-      <div class="adm-scroll"><table class="adm-table" id="tbl-db"></table></div>
+
+      <!-- 설정 탭 -->
+      <div class="adm-pane" id="tab-settings">
+
+        <!-- 메타 픽셀 설정 -->
+        <div class="set-block">
+          <h3>메타 픽셀 설정</h3>
+          <p class="set-desc">Meta Business Suite에서 발급받은 픽셀 ID를 입력하세요. 저장 즉시 랜딩페이지에 자동으로 삽입됩니다.</p>
+          <div class="set-input-row">
+            <input type="text" id="pixel-input" placeholder="픽셀 ID (PIXEL ID)" inputmode="numeric" />
+          </div>
+          <div style="display:flex; gap:8px; flex-wrap:wrap;">
+            <button class="btn-set-save" id="pixel-save">저장</button>
+            <button class="btn-set-del" id="pixel-remove">픽셀 제거</button>
+          </div>
+          <div class="set-status off" id="pixel-status">● 미설정</div>
+          <div class="set-howto">
+            <b>적용 방법</b><br>
+            1. Meta Business Suite → 이벤트 관리자 → 픽셀 생성<br>
+            2. 픽셀 ID (15~16자리 숫자)를 위 입력창에 붙여넣기<br>
+            3. 저장 버튼 클릭 → 랜딩페이지에 즉시 반영
+          </div>
+        </div>
+
+        <!-- 푸시 알림 설정 -->
+        <div class="set-block">
+          <h3>푸시 알림 설정</h3>
+          <p class="set-desc">새 신청이 들어오면 이 기기로 즉시 알림을 받습니다.<br>알림을 받을 기기(휴대폰 등)에서 직접 설정해야 합니다.</p>
+          <div class="notif-row">
+            <div class="notif-status off" id="notif-status">● 알림 미설정</div>
+            <button class="btn-notif enable" id="notif-btn">알림 켜기</button>
+          </div>
+          <p class="notif-desc" id="notif-desc">브라우저 알림 권한을 허용하면 새 신청 접수 시 즉시 알림이 옵니다.</p>
+        </div>
+
+      </div>
     </div>
   </div>
 </div>
@@ -910,6 +1006,7 @@ document.getElementById("apply-form").addEventListener("submit", e => {
   const screen = document.getElementById("admin-screen");
   const EV_KEY = "guesthouse_events";
   const APP_KEY = "guesthouse_applications";
+  const PIXEL_KEY = "adm_pixel_id";
 
   function read(k){ try { return JSON.parse(safeGet(k) || "[]"); } catch(e){ return []; } }
   function clean(s){ return (s || "").toString().replace(/\n/g, " "); }
@@ -921,7 +1018,20 @@ document.getElementById("apply-form").addEventListener("submit", e => {
 
   document.getElementById("adm-close").addEventListener("click", () => {
     screen.classList.remove("show");
+    document.getElementById("adm-gate").style.display = "block";
+    document.getElementById("adm-dash").style.display = "none";
+    document.getElementById("adm-pin").value = "";
     history.replaceState(null, "", location.pathname + location.search);
+  });
+
+  // 탭 전환
+  document.querySelectorAll(".adm-tab").forEach(tab => {
+    tab.addEventListener("click", () => {
+      document.querySelectorAll(".adm-tab").forEach(t => t.classList.remove("active"));
+      document.querySelectorAll(".adm-pane").forEach(p => p.classList.remove("active"));
+      tab.classList.add("active");
+      document.getElementById(tab.dataset.tab).classList.add("active");
+    });
   });
 
   // 로그인
@@ -937,8 +1047,88 @@ document.getElementById("apply-form").addEventListener("submit", e => {
         "방문자가 각자 휴대폰에서 신청한 데이터는 그 기기에 저장되므로 여기엔 모이지 않습니다. " +
         "실제 고객 DB를 한곳에 모으려면 폼을 외부 저장소(구글시트·서버)에 연결해야 합니다.";
       render();
+      initSettings();
     } else {
       document.getElementById("adm-err").textContent = "PIN이 올바르지 않습니다.";
+    }
+  }
+
+  /* ===================== 설정 탭 로직 ===================== */
+  function initSettings(){
+    // 메타 픽셀
+    const pixelInput  = document.getElementById("pixel-input");
+    const pixelStatus = document.getElementById("pixel-status");
+    const savedPixel  = safeGet(PIXEL_KEY) || "";
+    pixelInput.value  = savedPixel;
+    updatePixelStatus(savedPixel);
+
+    document.getElementById("pixel-save").addEventListener("click", () => {
+      const id = pixelInput.value.trim();
+      if(!id){ alert("픽셀 ID를 입력하세요."); return; }
+      safeSet(PIXEL_KEY, id);
+      CONFIG.metaPixelId = id;
+      updatePixelStatus(id);
+      alert("저장되었습니다. 랜딩페이지 새로고침 시 픽셀이 적용됩니다.");
+    });
+
+    document.getElementById("pixel-remove").addEventListener("click", () => {
+      if(!confirm("픽셀을 제거할까요?")) return;
+      try { localStorage.removeItem(PIXEL_KEY); } catch(e){}
+      pixelInput.value = "";
+      CONFIG.metaPixelId = "";
+      updatePixelStatus("");
+    });
+
+    function updatePixelStatus(id){
+      if(id){
+        pixelStatus.textContent = "● 현재 적용 중: " + id;
+        pixelStatus.className = "set-status on";
+      } else {
+        pixelStatus.textContent = "● 미설정";
+        pixelStatus.className = "set-status off";
+      }
+    }
+
+    // 푸시 알림
+    const notifBtn    = document.getElementById("notif-btn");
+    const notifStatus = document.getElementById("notif-status");
+    const notifDesc   = document.getElementById("notif-desc");
+
+    function updateNotifUI(perm){
+      if(perm === "granted"){
+        notifStatus.textContent = "● 알림 수신 중";
+        notifStatus.className = "notif-status on";
+        notifBtn.textContent = "알림 끄기";
+        notifBtn.className = "btn-notif disable";
+        notifDesc.textContent = "새 신청 접수 시 이 기기로 알림이 옵니다.";
+      } else if(perm === "denied"){
+        notifStatus.textContent = "● 알림 차단됨";
+        notifStatus.className = "notif-status off";
+        notifBtn.textContent = "브라우저 설정에서 허용";
+        notifBtn.className = "btn-notif enable";
+        notifDesc.textContent = "브라우저 주소창 왼쪽 자물쇠 아이콘 → 알림 → 허용으로 변경하세요.";
+      } else {
+        notifStatus.textContent = "● 알림 미설정";
+        notifStatus.className = "notif-status off";
+        notifBtn.textContent = "알림 켜기";
+        notifBtn.className = "btn-notif enable";
+        notifDesc.textContent = "브라우저 알림 권한을 허용하면 새 신청 접수 시 즉시 알림이 옵니다.";
+      }
+    }
+
+    if("Notification" in window){
+      updateNotifUI(Notification.permission);
+      notifBtn.addEventListener("click", () => {
+        if(Notification.permission === "granted"){
+          updateNotifUI("default");
+          notifDesc.textContent = "알림을 끄려면 브라우저 설정에서 직접 차단하세요.";
+          return;
+        }
+        Notification.requestPermission().then(p => updateNotifUI(p));
+      });
+    } else {
+      notifStatus.textContent = "● 이 브라우저는 알림을 지원하지 않습니다";
+      notifBtn.style.display = "none";
     }
   }
 
